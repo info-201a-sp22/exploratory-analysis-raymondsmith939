@@ -1,7 +1,7 @@
 library("readr")
 library("dplyr")
 library("ggplot2")
-us_disaster_declarations <- read_csv("Desktop/info201/us_disaster_declarations.csv")
+us_disaster_declarations <- read_csv("https://raw.githubusercontent.com/info-201a-sp22/exploratory-analysis-raymondsmith939/main/us_disaster_declarations.csv?token=GHSAT0AAAAAABTAT5A5YK4QODH6TJ7KS5ZIYT62Y6Q")
 
 WA_disaster <- us_disaster_declarations %>% 
   filter(state == 'WA') 
