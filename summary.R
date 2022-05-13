@@ -3,5 +3,4 @@ us_disaster_declarations <- read.csv("https://raw.githubusercontent.com/info-201
 summary_info <- list()
 summary_info <- append(summary_info, pct_change)
 summary_info <- append(summary_info, year_max_disasters)
-
-summary_info <- append(summary_info, )
+summary_info <- append(summary_info, largest_pct_state_increase)

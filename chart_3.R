@@ -95,3 +95,10 @@ ggplot(States) +
     guide = "colourbar",
     aesthetics = "fill"
   )
+
+
+# Which U.S. state experienced the greatest increase in natural disasters since 2000?
+largest_pct_increase <- graph_df3_increase %>% 
+  filter(pct_change == max(pct_change)) %>% 
+  pull(region)
+
