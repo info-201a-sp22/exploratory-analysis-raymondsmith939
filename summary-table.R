@@ -28,11 +28,12 @@ most_common_state <- us_disaster_declarations %>%
   group_by(state, Years = cut(fy_declared, breaks = seq(start_year, end_year, year_interval))) %>%
   summarize(number_of_disasters = length(incident_type)) %>% 
   group_by(Years) %>% 
-  filter(number_of_disasters == max(number_of_disasters)) %>% summarize("Most Common State" = state)
+  filter(number_of_disasters == max(number_of_disasters)) %>% 
+  summarize('State With Most Disasters' = state)
 
 #join number of unique disaster types per range to overall disasters per range
 summary_table <- left_join(summary_table, most_common_state)
 summary_table <- left_join(summary_table, number_of_disasters_by_type)
 
 #reorder columns
-summary_table <- summary_table %>% relocate('Most Common State', .before = `Number of Disasters`)
+summary_table <- summary_table %>% relocate('State With Most Disasters', .after = 'Severe Storm(s)')
