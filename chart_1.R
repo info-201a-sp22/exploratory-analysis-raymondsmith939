@@ -5,7 +5,7 @@ library ("dplyr")
 library("ggplot2")
 
 # Load datasets
-natural_disasters <- read.csv("https://raw.githubusercontent.com/info-201a-sp22/exploratory-analysis-raymondsmith939/main/us_disaster_declarations.csv?token=GHSAT0AAAAAABTAT5A5YK4QODH6TJ7KS5ZIYT62Y6Q")
+natural_disasters <- read.csv("/Users/raymondsmith/Info201code/exploratory-analysis-raymondsmith939/us_disaster_declarations.csv")
 disasters_each_year <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n())
 
 # Find year during which most disasters occurred 

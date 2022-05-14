@@ -37,3 +37,13 @@ summary_table <- left_join(summary_table, number_of_disasters_by_type)
 
 #reorder columns
 summary_table <- summary_table %>% relocate('State With Most Disasters', .after = 'Severe Storm(s)')
+
+#Find Year range with most disasters
+most_disasters <- paste0(summary_table %>% filter(`Number of Disasters` == max(`Number of Disasters`)) %>% pull(Years))
+
+#Fix most_disasters formatting
+most_disasters <- gsub("\\(|\\]|","", most_disasters)
+most_disasters <- gsub(",", "-", most_disasters)
+
+#Find State that most commonly has the most disasters
+state_most_common <- summary_table %>% count(`State With Most Disasters`) %>% filter(n == max(n)) %>% pull(`State With Most Disasters`)
