@@ -5,7 +5,6 @@ output: html_document
 
 ## Analysis of U.S. Natural Disasters 1953-present
 
-Give your project a concise, interesting title that summarizes the entirety of your project
 
 ### Authors
 
