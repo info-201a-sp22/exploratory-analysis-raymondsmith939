@@ -8,10 +8,12 @@ library("ggplot2")
 natural_disasters <- read.csv("us_disaster_declarations.csv")
 disasters_each_year <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n())
 
+
 # Find year during which most disasters occurred 
 year_max_disasters <- disasters_each_year %>% filter(number_disasters == max(number_disasters)) %>% pull(fy_declared)
 
 # Plot values from all years
+options(repr.plot.width = 20, repr.plot.height = 8)
 ggplot(disasters_each_year) + 
   geom_line(mapping = aes(x = fy_declared, y = number_disasters), color = "blue") +
   geom_point(mapping = aes(x = fy_declared, y = number_disasters), color  = "red") + 
@@ -19,4 +21,4 @@ ggplot(disasters_each_year) +
   scale_x_continuous(breaks = round(seq(1953, 2022, by = 1))) +
   scale_y_continuous(breaks = round(seq(0, 9500, by = 1000))) +
   theme(axis.text.x = element_text(angle = 90))
-  
+

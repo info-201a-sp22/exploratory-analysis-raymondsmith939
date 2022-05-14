@@ -1,54 +1,64 @@
 ---
-title: "Exploratory Analysis"
+title: "U.S. Natural Disasters Exploratory Analysis"
 output: html_document
 ---
 
-## Project title
+## Analysis of U.S. Natural Disasters 1953-present
 
 Give your project a concise, interesting title that summarizes the entirety of your project
 
 ### Authors
 
-Names of your team members
+Isaac Ajeto (ajeto@uw.edu) <br>
+Raymond Smith (smithray@uw.edu) <br>
+Angelina Li (yuchel9@uw.edu) <br>
+Amisha G. (amishg@uw.edu)
 
 ### Date
 
-Winter 2022
+Spring 2022
+May 14th, 2022
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+We analysed U.S. Natural Disaster Declarations since 1953. Our main idea was to tie the occurrence of natural disasters in the U.S. as an effect of climate change over the last 68 years.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Keywords: natural disasters; united states; climate change;
 
 ### Introduction  
 
 Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
 
+For this project, we will be looking at U.S. Natural Disaster Declarations since 1953. We aim to correlate our findings with climate change so that we can make our readers aware of the harmful effects of climate change. Through this project we aim to answer the following questions:
+
+
+ 1.  In which year did most disasters occur? <p> This question throws light on the year during which most natural disasters occurred. Answer to this question would help us in possibly focusing on certain features of climate change that were most prominent in that year to strengthen the correlation between climate change and natural disasters.
+
+  2.  What is the change in the amount of natural disasters in Washington State? <p> This question helps focus on the change in natural disasters in Washington State. Focusing on a small area can help us understand and correlate the change in natural disasters with features of climate change that are specific to Washington State (such as an astronomical increase in mean temperature), 
+  
+  3.  Which U.S. state experienced the greatest increase in natural disasters since 2000? <p> This question throws light on the states that are most prone to a certain category of natural disasters. Answer to this question can help disaster managers to increase their presence in certain areas that may require more attention so that rescue operations can be conducted in a timely manner.
+  
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+The growing occurrence of natural disasters in the United States is one of the most pressing consequences of climate change. According to the United States Geological Survey, "With  increasing global surface temperatures the possibility of more droughts and increased intensity of storms will likely occur. As more water vapor is evaporated into the atmosphere it becomes fuel for more powerful storms to develop. More heat in the atmosphere and warmer ocean surface temperatures can lead to increased wind speeds in tropical storms. Rising sea levels expose higher locations not usually subjected to the power of the sea and to the erosive forces of waves and currents" (USGS, 2021). 
+
+With the increasing prevalence of natural disasters such as hurricanes, wildfires, or tornados, being able to use aggregate data to visualize the trends and changes in natural disasters will offer insights on our changing world. This sentiment is ubiquitous across much of the scientific world, and there is a bulk of research on the changing nature and frequency of natural disasters. The World Meteorological Organization found in their 2021 report that natural disasters have increased five-fold over the last 50 years, showing that there is a changing trend in the amount of natural disasters (WMO, 2021). NPR has found that not only are disasters becoming more severe, they also have dire effects on our mental health (Pruitt-Young, 2021). A related work to our project is the Natural Disaster article by Hannah Ritchie and Max Roser, which displays natural disaster deaths over time by country and type (Ritchie, 2021). However, we'd like to focus specifically on FEMA declarations in the USA and the frequency of the disasters themselves, not the amount of deaths. This project will fit into this topic and space by supporting findings of increasing natural disasters with a data visualization. Although related works have focused on deaths, we will focus more specifically on the change in frequency and concentration of natural disasters within the United States, offering insights for those in the United States.
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+We found our data on kaggle.com, a website created by machine learning practitioners and data scientists. A link to the data will be included at the end of this section. The data was originally collected by the Federal Emergency Management Agency, FEMA. The data set was taken in by Kaggle, which cleaned up the data and formatted it to make it more friendly for use. As stated, this data was collected by FEMA, and the data from 1998 to the present comes from the National Emergency Management Information System (NEMIS). Data from before the launch of the system was manually entered from historical accounts and data regarding previous natural disasters. The data was collected so that FEMA could fulfill their purpose and responsibility of protecting people before, during and after disaster strikes. Our dataset has 4,657 observations, and has 10 columns.
+
+The main ethical question that comes to mind from this dataset has to do with what conclusions are being drawn from it, and if proactive measures are being taken by potentially affected citizens who may be struck by temporary or permanent disasters. The potential limitations of the dataset include the relative novelty of the system. The data collected before 1998 was manually entered, and was derived from historical accounts. The problem with this was that the dataset begins in 1953, and well over half of the 69 years for which we have data were collected from before the NEMIS system was established. As a result of this, there may be some disaster data missing due to the failure of accounts being made for a disaster, or the imperfections of systems to document those disasters. This is not to say that today's methods are perfect, but technology and information systems have developed so drastically over such a long period of time that it must be acknowledged that the differences in yesterday's systems may affect the accuracy of the data that we are working with. Another potential problem with the set is that there are so many observations (well over 4,000), which could cause problems to arise while we are attempting to open the set in github. Overall, I would say that the data seems pretty trustworthy considering that it comes from a federal agency, but even such a dataset has its limitations.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+Finding out the most common categories of natural disasters can help researchers monitor which kinds of disasters need more frequent and urgent care as well as make the readers aware of the consequences of climate change. This also shows what kind of resources need to be prepared to respond when natural disasters happen. Having the adequate amount would prevent wasteful behavior, but also ensures the safety of people in the area. Knowing about the average time between a particular disaster can guide disaster managers and researchers to better have an evacuation plan and urge change makers to act on climate change. We would also look into which U.S states had the most disasters by category. Answering this question would guide disaster managers and policymakers to increase their attention in certain areas that need to be more cautious.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+One limitation is that the dataset shows previous data of natural disasters in the United States. However, natural phenomena are not predictable. It is difficult for disaster managers to accurately predict future natural disasters. Although they could have a big idea, there are still flaws to the prediction. The second limitation is that the dataset only includes natural disasters with broad categories. Natural disasters include many specific categories and this dataset might not be able to consider those. Policymakers and disaster managers might not be very accurate when using data and taking measures to help specific areas with a particular natural disaster. The data retrieved from the technology might not be the best to predict future natural disasters. There are limitations to the accuracy of technology. This would be a challenge when disaster managers are considering the next move for each area. These are the challenges and limitations that might affect the result of the data.
 
 ### Summary Information
 
@@ -66,9 +76,7 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, code = readLines("chart_1.R"), fig.width = 10, fig.height = 5}
 ```
 
 ### Chart 2
@@ -77,8 +85,20 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
+``````{r, echo = FALSE, code = readLines("chart_2.R"), fig.width = 10, fig.height = 5}
+```
+
 ### Chart 3
 
 Include a chart
 
 Describe why you chose this chart and what information it reveals
+
+``````{r, echo = FALSE, code = readLines("chart_3.R"), fig.width = 10, fig.height = 5}
+```
+
+### Citations
+1. "How Can Climate Change Affect Natural Disasters?" How Can Climate Change Affect Natural Disasters? | U.S. Geological Survey, https://www.usgs.gov/faqs/how-can-climate-change-affect-natural-disasters#:~:text=With%20increasing%20global%20surface%20temperatures,more%20powerful%20storms%20to%20develop
+2. "Climate and Weather Related Disasters Surge Five-Fold over 50 Years, but Early Warnings Save Lives - WMO Report | | UN News." United Nations, United Nations, https://news.un.org/en/story/2021/09/1098662. 
+3. Ritchie, Hannah, and Max Roser. "Natural Disasters." Our World in Data, 3 June 2014, https://ourworldindata.org/natural-disasters. 
+4. Pruitt-Young, Sharon. "Climate Change Is Making Natural Disasters Worse - along with Our Mental Health." NPR, NPR, 11 Sept. 2021, https://www.npr.org/2021/09/11/1035241392/climate-change-disasters-mental-health-anxiety-eco-grief.
