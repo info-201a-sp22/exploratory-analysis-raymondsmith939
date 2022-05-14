@@ -5,7 +5,7 @@ library ("dplyr")
 library("ggplot2")
 
 # Load datasets
-natural_disasters <- read.csv("us_disaster_declarations.csv")
+natural_disasters <- read.csv("/Users/raymondsmith/Info201code/exploratory-analysis-raymondsmith939/us_disaster_declarations.csv")
 disasters_each_year <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n())
 
 
