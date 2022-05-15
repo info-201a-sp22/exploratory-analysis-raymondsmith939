@@ -8,8 +8,8 @@ WA_disaster <- us_disaster_declarations %>%
 
 
 ggplot (WA_disaster, aes(incident_begin_date)) +
-  geom_histogram() +  
-  labs(title = "Number of Disasters in Washington by year", x = "Year", y = "Number of diasters") 
+  geom_histogram(color = "red", fill = "blue") +  
+  labs(title = "Number of Natural Disasters in Washington by year", x = "Year", y = "Number of diasters") 
  
 disasters_each_year <- WA_disaster %>% group_by(fy_declared) %>% summarise(number_disasters = n())
 

@@ -15,7 +15,7 @@ year_max_disasters <- disasters_each_year %>% filter(number_disasters == max(num
 ggplot(disasters_each_year) + 
   geom_line(mapping = aes(x = fy_declared, y = number_disasters), color = "blue") +
   geom_point(mapping = aes(x = fy_declared, y = number_disasters), color  = "red") + 
-  labs(title = "Number of disasters by year", x = "Year", y = "Number of diasters") +
+  labs(title = "Number of disasters by year", x = "Year", y = "Number of Natural Disasters") +
   scale_x_continuous(breaks = round(seq(1953, 2022, by = 1))) +
   scale_y_continuous(breaks = round(seq(0, 9500, by = 1000))) +
   theme(axis.text.x = element_text(angle = 90))

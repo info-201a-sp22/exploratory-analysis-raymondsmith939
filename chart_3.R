@@ -55,10 +55,10 @@ percent_change_map <- ggplot(States) +
                aes(x = long, y = lat, group=group, fill = net_change),
                color = "white") + 
   labs(title = "Increase in Natural Disasters by Frequency",
-       x = " ",
-       y = " ",
+       x = "Latitude",
+       y = "Longitude",
        fill = "Increase in # of Disasters") +
-  scale_fill_gradientn(colors = c("white", "goldenrod2", "darkred"))
+  scale_fill_gradientn(colors = c("white", "red", "blue"))
                        
 
 # Interactive Map
