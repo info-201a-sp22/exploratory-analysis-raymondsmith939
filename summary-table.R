@@ -1,4 +1,4 @@
-us_disaster_declarations <- read.csv("/Users/raymondsmith/Info201code/exploratory-analysis-raymondsmith939/us_disaster_declarations.csv")
+us_disaster_declarations <- read.csv("us_disaster_declarations.csv")
 
 library(DescTools)
 library(tidyverse)

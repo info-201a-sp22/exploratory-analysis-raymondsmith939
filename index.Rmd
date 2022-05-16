@@ -77,7 +77,7 @@ kable(summary_table[], caption = "Aggregate Data on United States Disaster Decla
 
 This chart shows the trend of natural disasters from 1953 to present. As we can see, there is an upward trend line from 1992 with a peak in 2020 with a record 9489 natural disasters. There is also a noteworthy decline in disasters after 2020, possibly due to low human activity. This chart helps us correlate the increase in the number of natural disasters with climate change in terms of time.
 
-``````{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_1.R"), fig.width = 10, fig.height = 5}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_1.R"), fig.width = 10, fig.height = 5}
 ```
 
 ### Chart 2
@@ -85,7 +85,7 @@ This chart shows the trend of natural disasters from 1953 to present. As we can 
 
 This chart shows the number of natural disasters that happened in Washington State from 1953 to now. From the graph, the number of natural disasters increased and peaked in 2020. The percent change in the amount of natural disaster would be 136%.
 
-``````{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_2.R"), fig.width = 10, fig.height = 5}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_2.R"), fig.width = 10, fig.height = 5}
 ```
 
 ### Chart 3
@@ -93,7 +93,7 @@ This chart shows the number of natural disasters that happened in Washington Sta
 
 Describe why you chose this chart and what information it reveals
 
-``````{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_3.R"), fig.width = 10, fig.height = 5}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_3.R"), fig.width = 10, fig.height = 5}
 ```
 
 ### Citations
