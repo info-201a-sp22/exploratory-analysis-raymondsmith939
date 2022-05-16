@@ -82,7 +82,6 @@ This chart shows the trend of natural disasters from 1953 to present. As we can 
 
 ### Chart 2
 
-Include a chart
 
 This chart shows the number of natural disasters that happened in Washington State from 1953 to now. From the graph, the number of natural disasters increased and peaked in 2020. The percent change in the amount of natural disaster would be 136%.
 
@@ -91,7 +90,6 @@ This chart shows the number of natural disasters that happened in Washington Sta
 
 ### Chart 3
 
-Include a chart
 
 Describe why you chose this chart and what information it reveals
 
