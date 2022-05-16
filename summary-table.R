@@ -2,6 +2,7 @@ us_disaster_declarations <- read.csv("us_disaster_declarations.csv")
 
 library(DescTools)
 library(tidyverse)
+library(knitr)
 
 #set range parameters
 year_interval <- 5
@@ -39,8 +40,7 @@ summary_table <- summary_table[-1,]
 #reorder columns
 summary_table <- summary_table %>% relocate('State With Most Disasters', .after = 'Severe Storm(s)')
 
-
-library(knitr)
+#Display table
 kable(summary_table[], caption = "Aggregate Data on United States Disaster Declarations in 5 Year Ranges")
 
 #Find Year range with most disasters
