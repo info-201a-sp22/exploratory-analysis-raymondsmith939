@@ -65,9 +65,13 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table
 
-Include a table of aggregate information
+This table displays the number of disasters that occurred within every 5 year period of our dataset. It also includes the number of the 6 most common categories of disasters and the state with the most disasters within that time frame. We included this information because we wanted to make it easier for viewers to see the change over time in disasters. Because our initial data uses each disasters as a new observation, it's difficult to understand or visualize how many disasters occurred over a year, range of years, or overall. By aggregating this data, we are able to display the change over time in disasters. 
 
-Describe why you included the table and what information it reveals
+```{r, echo=FALSE}
+library(knitr)
+kable(summary_table[], caption = "Aggregate Data on United States Disaster Declarations in 5 Year Ranges")
+```
+
 
 ### Chart 1
 
