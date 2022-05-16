@@ -34,9 +34,14 @@ most_common_state <- us_disaster_declarations %>%
 #join number of unique disaster types per range to overall disasters per range
 summary_table <- left_join(summary_table, most_common_state)
 summary_table <- left_join(summary_table, number_of_disasters_by_type)
+summary_table <- summary_table[-1,]
 
 #reorder columns
 summary_table <- summary_table %>% relocate('State With Most Disasters', .after = 'Severe Storm(s)')
+
+
+library(knitr)
+kable(summary_table[], caption = "Aggregate Data on United States Disaster Declarations in 5 Year Ranges")
 
 #Find Year range with most disasters
 most_disasters <- paste0(summary_table %>% filter(`Number of Disasters` == max(`Number of Disasters`)) %>% pull(Years))
@@ -47,3 +52,5 @@ most_disasters <- gsub(",", "-", most_disasters)
 
 #Find State that most commonly has the most disasters
 state_most_common <- summary_table %>% count(`State With Most Disasters`) %>% filter(n == max(n)) %>% pull(`State With Most Disasters`)
+
+
