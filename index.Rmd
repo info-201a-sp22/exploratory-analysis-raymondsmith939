@@ -65,7 +65,7 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table
 
-This table displays the number of disasters that occurred within every 5 year period of our dataset. It also includes the number of the 6 most common categories of disasters and the state with the most disasters within that time frame. We included this information because we wanted to make it easier for viewers to see the change over time in disasters. Because our initial data uses each disasters as a new observation, it's difficult to understand or visualize how many disasters occurred over a year, range of years, or overall. By aggregating this data, we are able to display the change over time in disasters. 
+This table displays the number of disasters that occurred within every 5 year period of our dataset. It also includes the number of the 6 most common categories of disasters and the state with the most disasters within that time frame. We included this information because we wanted to make it easier for viewers to see the change over time in disasters. Because our initial data uses each disasters as a new observation, it's difficult to understand or visualize how many disasters occurred over a year, range of years, or overall. By aggregating this data, we are able to display the change over time in disasters. As a side note and for general understanding, as is consistent with general mathematic notation, the bracket ] on the year ranges represents that the year is included whereas a parentheses ( communicates that the year is a start point and not included. 
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("summary-table.R"), fig.width = 10, fig.height = 5}
 ```
