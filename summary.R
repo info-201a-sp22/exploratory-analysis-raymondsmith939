@@ -17,7 +17,8 @@ summary_info$greatest_increase <- natural_disasters %>%
   group_by(state, disaster_number) %>% 
   filter(fy_declared == 2020) %>% 
   mutate(freq_2020 = n()) %>% 
-  pull(max(freq_2020))
+  summarize(max_in_state = max(freq_2020))
+  pull(max_in_state)
 
 #set range parameters
 year_interval <- 5
