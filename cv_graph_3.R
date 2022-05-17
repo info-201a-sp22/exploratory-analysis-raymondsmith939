@@ -48,32 +48,6 @@ state_code <- left_join(States, state_abbreviations, by = 'region')
 # The data for the graph! States template + frequency data
 graph_df3 <- left_join(state_code, test_freq_2000_vs_2020, by = 'state')
 
-# The Map!
-
-net_change_map <- ggplot(States) + 
-  geom_polygon(data = graph_df3,
-               aes(x = long, y = lat, group=group, fill = net_change),
-               color = "white") + 
-  labs(title = "Increase in Natural Disasters by Frequency",
-       x = "Latitude",
-       y = "Longitude",
-       fill = "Increase in # of Disasters") +
-  scale_fill_gradientn(colors = c("white", "red", "darkred"))
-                       
-
-# Interactive Map
-
-
-ggplotly(net_change_map)
-
-
-
-# Which U.S. state experienced the greatest increase in natural disasters since 2000?
-# Maine increased by 438 occurrences.
-
 grestest_increase <- graph_df3 %>% 
   summarize(grestest_increase = max(net_change, na.rm = TRUE)) %>% 
   pull()
-
-state_greatest_increase <- graph_df3 %>% filter(max_dis = max())
-  summarize(state_greatest_increase = )

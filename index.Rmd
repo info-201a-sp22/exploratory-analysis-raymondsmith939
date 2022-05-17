@@ -89,9 +89,10 @@ This chart shows the number of natural disasters that happened in Washington Sta
 ### Chart 3
 
 
-Describe why you chose this chart and what information it reveals
+We have included this data visualization because it shows us the net change in the number disasters by state, over a 20-year period from 2000 to 2020. In the map visualization, you can see that many east coast states saw siginificant increases, and the state that experienced the greatest increase in natural disasters was Maine, which saw an increase of 438 natural disasters.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_3.R"), fig.width = 10, fig.height = 5}
+
 ```
 
 ### Citations

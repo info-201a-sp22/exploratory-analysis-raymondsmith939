@@ -8,8 +8,8 @@ summary_info <- append(summary_info, pct_change)
 # Find year during which most disasters occurred 
 summary_info <- append(summary_info, year_max_disasters)
 
-#Find State that that had the largest percent increase 
-summary_info <- append(summary_info, largest_pct_state_increase)
+#Find the state that had the great total increase in natural disasters
+summary_info <- append(summary_info, greatest_increase)
 
 #Find 5 year range that had the most disaster declarations
 summary_info <- append(summary_info, most_disasters)
