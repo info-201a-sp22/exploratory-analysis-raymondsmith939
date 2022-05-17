@@ -7,7 +7,7 @@ library(knitr)
 summary_info <- list()
 
 #Find percent change for Washington State
-summary_info$pct_change <- max(natural_disasters %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% pull(number_disasters)) / min(us_disaster_declarations %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n())%>% pull(number_disasters))
+summary_info$pct_change <- max(natural_disasters %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% pull(number_disasters)) / min(natural_disasters %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n())%>% pull(number_disasters))
 
 # Find year during which most disasters occurred 
 summary_info$year_max_disasters <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% filter(number_disasters == max(number_disasters)) %>% pull(fy_declared)
@@ -22,8 +22,8 @@ summary_info$greatest_increase <- natural_disasters %>%
 
 #set range parameters
 year_interval <- 5
-start_year <-RoundTo(min(us_disaster_declarations$fy_declared), multiple = year_interval, FUN = floor)
-end_year <- RoundTo(max(us_disaster_declarations$fy_declared), multiple = year_interval, FUN = ceiling)
+start_year <-RoundTo(min(natural_disasters$fy_declared), multiple = year_interval, FUN = floor)
+end_year <- RoundTo(max(natural_disasters$fy_declared), multiple = year_interval, FUN = ceiling)
 
 #find number of disasters per range of years
 summary_table <- natural_disasters %>% 
