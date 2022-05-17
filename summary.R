@@ -8,9 +8,13 @@ summary_info$pct_change <- max(disasters_each_year$number_disasters) / min(disas
 # Find year during which most disasters occurred 
 summary_info$year_max_disasters <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% filter(number_disasters == max(number_disasters)) %>% pull(fy_declared)
 
-#Find the state that had the great total increase in natural disasters
-summary_info <- append(summary_info, greatest_increase)
-
+#Find the state that had the greatest total natural disasters in the most recent year.
+summary_info$greatest_increase <- disaster_data %>% 
+  group_by(state, disaster_number) %>% 
+  filter(fy_declared == 2020) %>% 
+  mutate(freq_2020 = n()) %>% 
+  pull(max(freq_2020))
+  
 #Find 5 year range that had the most disaster declarations
 summary_info <- append(summary_info, most_disasters)
 
