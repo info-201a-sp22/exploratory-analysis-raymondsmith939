@@ -12,13 +12,42 @@ summary_info$pct_change <- max(natural_disasters %>% filter(state == 'WA') %>% g
 # Find year during which most disasters occurred 
 summary_info$year_max_disasters <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% filter(number_disasters == max(number_disasters)) %>% pull(fy_declared)
 
-#Find the state that had the greatest total natural disasters in the most recent year.
-summary_info$greatest_increase <- natural_disasters %>% 
+#Find the state that had the greatest increase natural disasters in the most recent year.
+
+States <- map_data('state')
+disaster_data <- read.csv("us_disaster_declarations.csv")
+state_abbreviations <- read.csv("abbreviations.csv")
+
+freq_2000_disasters <- disaster_data %>% 
+  group_by(state, disaster_number) %>% 
+  filter(fy_declared == 2000) %>% 
+  mutate(freq_2000 = n())
+
+freq_2020_disasters <- disaster_data %>% 
   group_by(state, disaster_number) %>% 
   filter(fy_declared == 2020) %>% 
-  mutate(freq_2020 = n()) %>% 
-  summarize(max_in_state = max(freq_2020)) %>% 
-  pull(max_in_state)
+  mutate(freq_2020 = n())
+
+freq_2000_vs_2020 <- left_join(freq_2020_disasters, freq_2000_disasters, by = 'state')
+
+freq_2000_vs_2020 <- freq_2000_vs_2020 %>% 
+  mutate(net_change = (freq_2020 - freq_2000))
+
+test_freq_2000_vs_2020 <- freq_2000_vs_2020 %>% 
+  distinct(state, net_change) %>% 
+  select(state, net_change) 
+
+colnames(state_abbreviations) <- c('region', 'abbrev', 'state')
+state_abbreviations$region = tolower(state_abbreviations$region)
+
+state_code <- left_join(States, state_abbreviations, by = 'region')
+
+graph_df3 <- left_join(state_code, test_freq_2000_vs_2020, by = 'state')
+
+summary_info$greatest_increase <- graph_df3 %>% 
+  summarize(grestest_increase = max(net_change, na.rm = TRUE)) %>% 
+  pull()
+
 
 #set range parameters
 year_interval <- 5
