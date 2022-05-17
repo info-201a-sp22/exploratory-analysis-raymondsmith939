@@ -74,6 +74,3 @@ ggplotly(net_change_map)
 grestest_increase <- graph_df3 %>% 
   summarize(grestest_increase = max(net_change, na.rm = TRUE)) %>% 
   pull()
-
-state_greatest_increase <- graph_df3 %>% filter(max_dis = max())
-  summarize(state_greatest_increase = )
