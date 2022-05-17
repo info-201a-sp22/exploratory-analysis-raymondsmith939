@@ -7,7 +7,7 @@ library(knitr)
 summary_info <- list()
 
 #Find percent change for Washington State
-#summary_info$pct_change <- max(disasters_each_year$number_disasters) / min(disasters_each_year$number_disasters)
+summary_info$pct_change <- max(natural_disasters %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% pull(number_disasters)) / min(us_disaster_declarations %>% filter(state == 'WA') %>% group_by(fy_declared) %>% summarise(number_disasters = n())%>% pull(number_disasters))
 
 # Find year during which most disasters occurred 
 summary_info$year_max_disasters <- natural_disasters %>% group_by(fy_declared) %>% summarise(number_disasters = n()) %>% filter(number_disasters == max(number_disasters)) %>% pull(fy_declared)
