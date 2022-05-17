@@ -60,8 +60,10 @@ Finding out the most common categories of natural disasters can help researchers
 One limitation is that the dataset shows previous data of natural disasters in the United States. However, natural phenomena are not predictable. It is difficult for disaster managers to accurately predict future natural disasters. Although they could have a big idea, there are still flaws to the prediction. The second limitation is that the dataset only includes natural disasters with broad categories. Natural disasters include many specific categories and this dataset might not be able to consider those. Policymakers and disaster managers might not be very accurate when using data and taking measures to help specific areas with a particular natural disaster. The data retrieved from the technology might not be the best to predict future natural disasters. There are limitations to the accuracy of technology. This would be a challenge when disaster managers are considering the next move for each area. These are the challenges and limitations that might affect the result of the data.
 
 ### Summary Information
-
-We have found the following values by manipulating this data set. First, the year with the most disasters was actually very recent, occurring in 2020. In our bar chart, we learned that the number of disasters has been as low as 1 in a year, to as high as 136 in a year. When examining the increase in the disasters over the last 20 years, from 2000 to 2020, we learned that the state of Maine saw the highest increase of number of disasters, rising by 438 occurrences in 2020 compared to the year 2000. Over the years, Texas has overwhelmingly been the state to report the most disasters, being at the top spot in 6 of the 16 oberseved intervals. Finally, the five-year period that saw the most disasters was in 2015-2020, where over 15,000 disasters were recorded.
+``` {r}
+source("summary.R")
+```
+We have found the following values by manipulating this data set. First, the year with the most disasters was actually very recent, occurring in `r summary_info$year_max_disasters`. In our bar chart, we learned that the number of disasters has been as low as 1 in a year, to as high as 136 in a year. When examining the increase in the disasters over the last 20 years, from 2000 to 2020, we learned that the state of Maine saw the highest increase of number of disasters, rising by 438 occurrences in 2020 compared to the year 2000. Over the years, Texas has overwhelmingly been the state to report the most disasters, being at the top spot in 6 of the 16 observed intervals. Finally, the five-year period that saw the most disasters was in 2015-2020, where over 15,000 disasters were recorded.
 
 ### Table
 
@@ -88,7 +90,7 @@ This chart shows the number of natural disasters that happened in Washington Sta
 
 ### Chart 3
 
-We have included this data visualization because it shows us the net change in the number disasters by state, over a 20-year period from 2000 to 2020. In the map visualization, you can see that many east coast states saw significant increases, and the state that experienced the greatest increase in natural disasters was Maine, which saw an increase of 438 natural disasters.
+This chart shows shows us the net change in the number disasters by state, over a 20-year period from 2000 to 2020. In the map visualization, you can see that many east coast states saw significant increases, and the state that experienced the greatest increase in natural disasters was Maine, which saw an increase of 438 natural disasters.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_3.R"), fig.width = 10, fig.height = 5}
 
