@@ -57,8 +57,8 @@ summary_table <- summary_table[-1,]
 summary_info$most_disasters_range <- paste0(summary_table %>% filter(`Number of Disasters` == max(`Number of Disasters`)) %>% pull(Years))
 
 #Fix most_disasters formatting
-summary_info$most_disasters_range <- gsub("\\(|\\]|","", most_disasters)
-summary_info$most_disasters_range <- gsub(",", "-", most_disasters)
+summary_info$most_disasters_range <- gsub("\\(|\\]|","", summary_info$most_disasters_range)
+summary_info$most_disasters_range <- gsub(",", "-", summary_info$most_disasters_range)
 
 #Find State that most commonly has the most disasters
 summary_info$state_most_common <- summary_table %>% count(`State With Most Disasters`) %>% filter(n == max(n)) %>% pull(`State With Most Disasters`)
